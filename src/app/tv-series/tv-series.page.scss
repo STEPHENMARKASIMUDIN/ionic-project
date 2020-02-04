@@ -1,0 +1,69 @@
+ion-col{
+    margin-bottom: 15px !important;
+}
+
+#video-player-wrapper {
+    background: #000;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#video-info {
+    padding-top: 10px;
+    height: 30px;
+    color: #fff;
+}
+
+.ion-card-content-video, .ion-card-video{
+    padding: 0 !important;
+}
+
+.ion-card-video{
+    margin-left: unset;
+    margin-right: unset;
+    -webkit-margin-start: 0px !important;
+    margin-inline-start: 0px !important;
+    -webkit-margin-end: 0px !important;
+    margin-inline-end: 0px !important;
+    border-radius: 0px !important;
+}
+
+.video-row{
+    display: flex;
+    margin: 0 auto;
+}
+
+#video-container, .video{
+    min-height: 270px;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 320px){
+    #video-container, .video{
+        width: 320px;
+    }
+}
+
+@media screen and (min-width: 360px){
+    #video-container, .video{
+        width: 360px;
+    }
+}
+
+@media screen and (min-width: 375px){
+    #video-container, .video{
+        width: 375px;
+    }
+}
+
+@media screen and (min-width: 411px){
+    #video-container, .video{
+        width: 411px;
+    }
+}
+
+@media screen and (min-width: 992px){
+    #video-container, .video{
+        min-width: 480px;
+    }
+}

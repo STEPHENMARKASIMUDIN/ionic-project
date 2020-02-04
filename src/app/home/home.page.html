@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-thumbnail slot="start">
+      <img src="/assets/MarkyTube.png" alt=""/>
+    </ion-thumbnail>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title> 
+    <app-menu></app-menu>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-title>Movies</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+            <ion-col size-xs="12" size-sm="12" size-md="4" size-xl="3" size-lg="3" *ngFor="let vid of VideoList.Movie">
+                <a [attr.href]="'/movies?id=' + vid.VidId" class="link text-decoration-none">
+                    <div class="mini-vid-wrapper">
+                        <div (mouseenter)="ShowPreview($event.currentTarget)" (mouseleave)="HidePreview()" class="vid-thumbnail-container ion-background-color">
+                            <div [attr.id]="'vid-preview-movie' + vid.VidId">
+                            </div>
+                            <div class="vid-thumbnail" [attr.data-id]="'vid-preview-movie' + vid.VidId" [attr.data-info]="vid.Path">
+                                <img width="209" height="117" [attr.src]="vid.Thumbnail" />
+                            </div>
+                        </div>
+                        <div class="ion-text-center padding-bottom">{{vid.Content}}</div>
+                    </div>
+                </a>
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+    <ion-card-header>
+      <ion-card-title>Anime</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+            <ion-col size-xs="12" size-sm="12" size-md="4" size-xl="3" size-lg="3" *ngFor="let vid of VideoList.Anime">
+              <a [attr.href]="'/animies?id=' + vid.VidId" class="link text-decoration-none">
+                <div class="mini-vid-wrapper">
+                    <div (mouseenter)="ShowPreview($event.currentTarget)" (mouseleave)="HidePreview()" class="vid-thumbnail-container ion-background-color">
+                        <div [attr.id]="'vid-preview-anime' + vid.VidId">
+                        </div>
+                        <div class="vid-thumbnail" [attr.data-id]="'vid-preview-anime' + vid.VidId" [attr.data-info]="vid.Path">
+                            <img width="209" height="117" [attr.src]="vid.Thumbnail" />
+                        </div>
+                    </div>
+                    <div class="ion-text-center padding-bottom">{{vid.Content}}</div>
+                </div>
+            </a>
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+    <ion-card-header>
+      <ion-card-title>TV Series</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+            <ion-col size-xs="12" size-sm="12" size-md="4" size-xl="3" size-lg="3" *ngFor="let vid of VideoList.TVSeries">
+              <a [attr.href]="'/tv-series?id=' + vid.VidId" class="link text-decoration-none">
+                <div class="mini-vid-wrapper">
+                    <div (mouseenter)="ShowPreview($event.currentTarget)" (mouseleave)="HidePreview()" class="vid-thumbnail-container ion-background-color">
+                        <div [attr.id]="'vid-preview-tv' + vid.VidId">
+                        </div>
+                        <div class="vid-thumbnail" [attr.data-id]="'vid-preview-tv' + vid.VidId" [attr.data-info]="vid.Path">
+                            <img width="209" height="117" [attr.src]="vid.Thumbnail" />
+                        </div>
+                    </div>
+                    <div class="ion-text-center padding-bottom">{{vid.Content}}</div>
+                </div>
+            </a>
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
